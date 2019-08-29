@@ -1,0 +1,33 @@
+{% load static %}
+<section class = "grid-docs-orgs">
+
+    <div class = "container_for_docsAndOrgs">
+
+        <link rel="stylesheet" type="text/css" href="{% static 'skSite/scss/documentsAndOrganizations.scss' %}">
+
+        <div class = "new_boxes">
+            <div class = "box_container">
+                <a href = "{% url 'faq-info' %}">
+                    <div  class="box_image1">
+                    </div>
+                </a>
+                <div class = "box_content">
+                    <p class="details">
+                        Інформація про могилянські ОСС, СО та СІГ
+                    </p>
+                </div>
+            </div>
+            <div class = "box_container">
+                <a href = "">
+                    <div class = "box_image2"></div>
+                </a>
+
+                <div class = "box_content">
+                    <p class="details">
+                        Документи та протоколи засідань
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

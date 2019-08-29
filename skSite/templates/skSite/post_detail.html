@@ -1,0 +1,10 @@
+{% extends "skSite/base.html" %}
+{% load static %}
+{% block content %}
+    <div class = "solo_news_post">
+        <img src = "{{ object.image.url }}" style = "max-width: 300px;height: auto; margin-left: auto; margin-right: auto; display: block;">
+        <p>{{ object.post_head }}</p>
+        <p>{{ object.post_text }}</p>
+        <p>{{ object.date_posted }}</p>
+    </div>
+{% endblock content %}

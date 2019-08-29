@@ -1,0 +1,134 @@
+.news {
+  font:$base-font;
+}
+
+.imageFromNews{
+  max-width: 100%;
+  height: auto; text-align: center; margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.all_news_button {
+  margin-top: 0;
+  text-align: right;
+  padding-bottom: 2.5em;
+  padding-right: 15px;
+  font-family: $headline-font;
+  font-weight: 300;
+}
+
+.latest_news_title {
+  padding: 1em 0;
+  text-align: center;
+  font-family: $headline-font;
+  color: $primary-text;
+  color: #140d55;
+  letter-spacing: 2px;
+  cursor: pointer;
+  font-weight: 400;
+  border-radius: 6px;
+
+}
+
+.cards {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+}
+
+.card_container {
+  padding: 0 15px;
+  max-width: 438px;
+  width: 33.333%;
+  box-sizing: border-box;
+  @include extra {
+    width: 33%;
+  }
+  @include large {
+    width: 50%;
+  }
+  @include medium {
+    width: 100%;
+  }
+
+  @include small {
+    width: 100%;
+  }
+  float: left;
+}
+
+.card_image_place {
+  position: relative;
+  width: 100%;
+  padding-top: 56.5%;
+}
+
+.card {
+  max-width: 400px;
+  max-height: 300px;
+  display: flex;
+  flex-direction: column;
+  flex-flow: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-family: $base-font;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+  transition: transform .3s ease-in-out;
+  position: relative;
+
+  &:hover{
+    transform: scale(1.05);
+  }
+
+  &:after{
+    position: absolute;;
+    // width: 100%;
+    // height: 100%;
+    background: red;
+    left: 0;
+    top: 0;
+    z-index: 10;
+  }
+
+
+  &:active:after{
+    background: rgba($color: #000000, $alpha: .1);
+  }
+}
+
+.card_title{
+  font-size: 20px;
+  background-color: inherit;
+  border-bottom: 1px solid rgba(160,160,160,0.2);
+  padding: 16px 24px;
+  width: 100%;
+  font-family: $headline-font;
+  font-weight: 300;
+}
+
+.card_link {
+  font-weight: bold;
+  color: $primary;
+  text-decoration: none;
+}
+
+
+.post_details {
+
+  color: black;
+  width: 100%;
+  text-align: justify-all;
+  margin: 0;
+  overflow: hidden;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.card_content {
+  height: 125px;
+  padding: 16px;
+}

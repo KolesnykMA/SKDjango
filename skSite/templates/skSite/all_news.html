@@ -1,0 +1,49 @@
+{% extends 'skSite/base.html' %}
+{% load static %}
+
+{% block title %}
+    All News
+{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'skSite/scss/all_news.css' %}">
+
+    <section class="all_news">
+        <div class="container-all-news">
+            <h1 class="news_header">Новини</h1>
+            <div id="news_list">
+                {% for new in news %}
+                    <article id="n{{ forloop.counter }}" class="news_article">
+
+                        <img class = "news_image" src="{{ new.image.url }}">
+
+                        <div class="news_info">
+                            <header>
+                                <time class="news_time">
+                                    <a id="h1" class="card_link"  href="{% url 'post-detail' new.id %}">{{ new.post_head }}</a>
+                                </time>
+                                <h2 style="margin-bottom: 0.5em">
+                                    <a class="news_title" href="">
+                                        {{ new.post_head }}
+                                    </a>
+                                </h2>
+                            </header>
+                            <p class="post_details">
+                                {{ new.post_text }}
+                            </p>
+                            <small> {{ new.author }}</small>
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+
+            <button type="button" id="load_more_button-all-news">Показати ще</button>
+
+        </div>
+
+    </section>
+{% endblock content %}
+
+{% block script %}
+    <script src="{% static 'skSite/js/all_news.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,140 @@
+{% extends 'skSite/base.html' %}
+{% load static %}
+
+{% block title %}
+  Main page
+{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'skSite/scss/news_index.scss' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'skSite/scss/contactForm.scss' %}">
+    {% include 'skSite/slider.html' %}
+
+    <section class="news">
+        <div class="container">
+            <h1 class="latest_news_title">Важливі повідомлення</h1>
+            <div class="cards">
+                {% for new in  news %}
+                    <div class="card_container">
+                        <div class="card">
+                                <img style = "max-width: 100%;height: auto; margin-left: auto; margin-right: auto; display: block;"src="{{ new.image.url }}">
+                            <div class="card_title">
+                                <a id="h1" class="card_link"  href="{% url 'post-detail' new.id %}">{{ new.post_head }}</a>
+                            </div>
+
+                            <div class="card_content">
+                                <p id="t1" class="post_details">
+                                    <small>{{ new.date_posted }}</small>
+                                    {{ new.post_text }}
+                                    <small>{{ new.author }}</small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <h2 class="all_news_button"><a href="{% url 'all-news' %}">Усі новини</a></h2>
+        </div>
+    </section>
+
+
+    {% include 'skSite/Faq.html' %}
+    {% include 'skSite/documentsAndOrganizations.scss.html' %}
+
+    <section class="ContactUS" id = "ContactUSPage">
+        <div class = "container--form">
+            <div class = centerInfo id = "infoContactBlock">
+                <h2 class="title">Звернись до СК</h2>
+            </div>
+
+            <div class = "iniside--form">
+                <div class="contactInfo" id = "infoContactBlock">
+                        <div class="AdressAll">
+                            <div class="infoHeader">
+                                 Адреса
+                            </div>
+
+                            <div class="infoFooter">
+                                4 корпус, кабінет 104
+                            </div>
+                        </div>
+
+                        <div class="PhoneAll">
+                            <div class="infoHeader">
+                                 Робочий номер телефону
+                            </div>
+
+                            <div class="infoFooter">
+                                +38097-393-98-92<br>
+                                (Каріна Плахотнюк, голова СК)
+                            </div>
+                        </div>
+
+                        <div class="MailAll">
+                            <div class="infoHeader">
+                                 Пошта Студентської колегії
+                            </div>
+
+                            <div class="infoFooter">
+                                sknaukma@ukma.edu.ua
+                            </div>
+                        </div>
+
+                </div>
+
+                <div class ="contactForm" id = "infoContactBlock">
+
+                    <form class="contactUs__form" action="" method="POST">
+                        {% csrf_token %}
+                        <label>
+                                <span class = "header_name_thurname">Ім'я та прізвище<font color="red"></font></span>
+                            <br>
+                            <input type="name" name = "name" class = "name" value size="38" aria-required="true" aria-invalid="false" placeholder = "Григорій Сковорода">
+                            <br>
+                        </label>
+                        <label>
+                            <br>
+                            <span class = "header_mail">Електронна пошта<font color="red"></font></span>
+                            <br>
+                            <input type = "mail" name = "email" class = "email" value size="38" aria-required="true" aria-invalid="false" placeholder="name.lastname@ukma.edu.ua">
+                            <br>
+
+                        </label>
+
+                        <label>
+                                <br>
+                                <span class = "header_telegram">Телеграм</span>
+                                <br>
+                                <input type = "telegram" name = "tg" class = "tg" value size="38" aria-required="true" aria-invalid="false" placeholder="@KMA1615">
+                                <br>
+                            </label>
+                        <label>
+                                <br>
+                                <span class = "header_message">Повідомлення </span>
+                            <br>
+                            <textarea name="your-message" name = "message" class="message" cols = "50" rows = "10" class = "textarea" aria-invalid="false"  placeholder="Було б дуже круто зробити..."></textarea>
+                            <br>
+
+                        </label>
+
+                        <div class = "status"></div>
+
+                        <div class= "buttonClass-contact">
+                            <button type = "submit" class = "button_form_contact">Надіслати</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+  
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'skSite/js/index.js' %}"></script>
+    <script src="{% static 'skSite/js/news_index.js' %}"></script>
+    <script src="{% static 'skSite/js/contactForm.js' %}"></script>
+    <script src = "https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+{% endblock %}

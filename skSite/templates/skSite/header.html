@@ -1,0 +1,78 @@
+{% load static %}
+<header class="header" id="header">
+    <link rel="stylesheet" type="text/css" href="{% static 'skSite/scss/header.css' %}">
+{#  <div class="container container--header">#}
+{#    <a href = "index.html">#}
+{#      <img src="img/sk_logo--without-text.png" alt="" class="header__img" align="left">#}
+{#    </a>#}
+{#    <nav class="nav header__nav">#}
+{#      <ul class="nav__list  active" id="header__list">#}
+{#        <li class="nav__item">#}
+{#          <a href="{% url 'index' %}" class="nav__link">#}
+{#            Головна#}
+{#          </a>#}
+{#        </li>#}
+{#        <li class="nav__item">#}
+{#          <a href="faqInfo.html" class="nav__link">#}
+{#            FAQ#}
+{#          </a>#}
+{#        </li>#}
+{#        <li class="nav__item">#}
+{#          <a href="organizations.html" class="nav__link">#}
+{#            Організації#}
+{#          </a>#}
+{#        </li>#}
+{#        <li class="nav__item">#}
+{#            <a href="documentation.html" class="nav__link">#}
+{#              Документи#}
+{#            </a>#}
+{#        </li>#}
+{#        <li class="nav__item">#}
+{#          <a href="index.html#ContactUSPage" class="nav__link">#}
+{#            Звернутися до СК#}
+{#          </a>#}
+{#        </li>#}
+{#      </ul>#}
+{#      <button class = "nav__btn" id="header__btn">#}
+{#          <i class="material-icons nav__menu-bar">#}
+{#              menu#}
+{#              </i>#}
+{#      </button>#}
+{#    </nav>#}
+{#  </div>#}
+    <nav class="navbar">
+        <span class="navbar-toggle" id="js-navbar-toggle">
+            <i class="fas fa-bars"></i>
+        </span>
+        <a href = "index.html">
+            <img src="img/sk_logo--without-text.png" alt="" class="header__img" align="left">
+        </a>
+        <ul class="main-nav" id="js-menu">
+            <li>
+                <a href="{% url 'index' %}" class="nav__link">
+                    Головна
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link">Products</a>
+            </li>
+            <li>
+                <a href="#" class="nav-link">About Us</a>
+            </li>
+            <li>
+                <a href="#" class="nav-link">Contact Us</a>
+            </li>
+            <li>
+                <a href="#" class="nav-link">Blog</a>
+            </li>
+        </ul>
+    </nav>
+    <script>
+        let mainNav = document.getElementById('js-menu');
+let navBarToggle = document.getElementById('js-navbar-toggle');
+
+navBarToggle.addEventListener('click', function () {
+  mainNav.classList.toggle('active');
+});
+    </script>
+</header>

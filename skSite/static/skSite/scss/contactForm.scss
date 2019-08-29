@@ -1,0 +1,196 @@
+.ContactUS{
+    font-family: $base-font;
+}
+
+
+.container--form{
+    background-image: url("https://i.ibb.co/M2YS8b7/Fotoram3.jpg");
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+
+  /* Center and scale the image nicely */
+
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+
+
+.iniside--form{
+    display: flex;
+    flex-flow: wrap;
+}
+
+.centerInfo{
+    margin-top: 20px;
+    margin-bottom: 35px;
+}
+
+.title{
+    margin-top:20px;
+    margin-bottom:25px;
+    font-family: $headline-font;
+    font-weight: 700;
+    @include font-size(32);
+    height: 1px;
+    top: 45%;
+    width: 100%;
+    color:white;
+    text-align: center;
+}
+
+.contactInfo{
+    display: flex;
+    flex-direction: column;
+    @include medium {
+        text-align: center;
+    }
+
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.contactForm{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+
+.contactUs__form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+
+#infoContactBlock{
+    color: white;
+
+    margin-left: 20px;
+    margin-right: 20px;
+
+    box-sizing: border-box;
+    @include extra {
+        width: 40%;
+     }
+    @include large {
+        width: 40%;
+    }
+    @include medium {
+        width: 40%;
+    }
+
+    @include small {
+        width: 100%;
+    }
+
+}
+
+
+
+
+
+.AdressAll{
+    margin-top:5px;
+    margin-bottom: 23px;
+
+}
+
+.PhoneAll{
+
+    margin-bottom: 24px;
+}
+
+
+
+.infoHeader{
+    color: white;
+}
+
+.infoFooter{
+   margin-top:4px;
+   font-size: 14px;
+   color: #140d55;
+}
+
+
+.name{
+    border-radius: 5px;
+    background-color: white;
+    margin-top:2px;
+}
+
+.email{
+    border-radius: 5px;
+    background-color: white;
+    margin-top:2px;
+}
+
+.tg{
+    border-radius: 5px;
+    background-color: white;
+    margin-top:2px;
+}
+
+.message{
+    margin-top:2px;
+    border-radius: 15px;
+    background-color: white;
+    padding: 0 6px;
+    width: 300px;
+}
+
+input {
+    width: 300px;
+    padding: 0 6px;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.buttonClass-contact{
+    min-height: 1px;
+}
+
+
+
+
+.button_form_contact{
+    background-color:#140d55;
+    color:white;
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    touch-action: manipulation;
+    font-weight: 400;
+    padding: 6px 8px;
+    text-transform: uppercase;
+    border-radius: 6px;
+    border-color: #140d55;
+
+
+
+}
+
+.button_form_contact:hover{
+    background-color: rgb(247, 242, 232);
+    color:black;
+}
+
+.status{
+    color: white;
+    margin-bottom: 20px;
+
+}
