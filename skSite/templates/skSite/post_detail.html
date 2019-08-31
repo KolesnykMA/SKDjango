@@ -1,9 +1,11 @@
 {% extends "skSite/base.html" %}
 {% load static %}
 {% block content %}
-    <div class = "solo_news_post" style="margin:10px 10px;">
-        <img src = "{{ object.image.url }}" style = "max-width: 300px;height: auto; margin-left: 25px; margin-top: 5px; margin-right: 25px; margin-bottom: 25px; display: block;" align="left">
-        <h1 style = "margin-top: 50px; margin-right: 25px;">{{ object.post_head }}</h1>
+        <link rel="stylesheet" type="text/css" href="{% static 'skSite/scss/base.css' %}">
+
+    <div class = "solo_news_post" style=" text-overflow: ellipsis; margin: 15px;">
+        <img src = "{{ object.image.url }}" style = "max-width: 300px;height: auto; margin:25px auto; display: block;" align="left">
+        <h1 style = "margin-top: 50px; margin-right: 25px; font-size: 32px;color: #22356d;">{{ object.post_head }}</h1>
         <br>
         <p style="padding-left: 5px; margin-right: 10px">Автор: {{ object.author }}. Дата: {{ object.date_posted }}</p>
         <br>
@@ -12,6 +14,5 @@
 {% endblock content %}
 
 {% block script %}
-    <script src="{% static 'skSite/js/index.js' %}"></script>
-    <script src = "https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <script src="{% static 'skSite/js/all_news.js' %}"></script>
 {% endblock %}

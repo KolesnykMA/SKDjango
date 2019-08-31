@@ -1,7 +1,7 @@
 .FaqMain {
     background-color: #009BB5;
-    // background-image: url(https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_1280.jpg);
-    background-image: url("https://ukranews.com/upload/news/2017/10/13/1359e0c4091181e-59e0c3fe643f3-0001-b025155a-59e0b16e-5ec7-c9c01f66_crop_1200.jpg");
+    /*background-image: url("https://ukranews.com/upload/news/2017/10/13/1359e0c4091181e-59e0c3fe643f3-0001-b025155a-59e0b16e-5ec7-c9c01f66_crop_1200.jpg");*/
+    background-image: url("/static/skSite/img/skovoroda_faq.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -10,11 +10,8 @@
     font-family: 'Roboto', sans-serif;
     text-align: center;
     color:white;
-    background-size:cover;
     background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+
 }
 
 .rowFaq{

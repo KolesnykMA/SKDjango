@@ -3,7 +3,17 @@
 
 {% block content %}
     <div class = "bodyDocs">
-
+        {% for doc in docs %}
+            <div class = "soloDoc" style="margin: 10px 10px">
+                <h1 style="font-size: 16px;color: #22356d">{{ doc.doc_name }}</h1>
+                <p>{{ doc.doc_description }}</p>
+                <br>
+                {{ doc.date_posted }}
+                <code style="border-bottom: 2px solid #22356d">
+                    <a href = "{{ doc.file.url }}">{{ doc.file }}</a>
+                </code>
+            </div>
+        {% endfor %}
     </div>
 
 

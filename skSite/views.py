@@ -12,7 +12,7 @@ send_mail(
     fail_silently=False,
 )
 
-from .models import Post
+from .models import Post, Document
 
 from django.views.generic import (
     ListView,
@@ -21,6 +21,7 @@ from django.views.generic import (
     UpdateView,
     DeleteView
 )
+
 
 def home(request):
     news = Post.objects.all()
@@ -70,7 +71,8 @@ def orgs(request):
 
 
 def docs(request):
-    return render(request, 'skSite/docs.html', {})
+    docs = Document.objects.all().order_by('-id')
+    return render(request, 'skSite/docs.html', {'docs':docs, })
 
 
 def successView(request):

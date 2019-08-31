@@ -195,3 +195,12 @@ input::-webkit-input-placeholder {
     margin-bottom: 20px;
 
 }
+
+.all_news_button {
+    padding-bottom: 0px;
+  margin-bottom: 0px;
+  text-align: right;
+  padding-right: 15px;
+  font-weight: 300;
+}
+
