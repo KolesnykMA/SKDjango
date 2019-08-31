@@ -10,28 +10,40 @@
     <link rel="stylesheet" type="text/css" href="{% static 'skSite/scss/base.css' %}">
 
     <section class="all_news">
-        <div class="container-all-news">
-            <h1 style="font-size: 32px; color: #22356d; text-align: center;" class="all_news_header">Новини</h1>
-            <div id="news_list" style="text-overflow: ellipsis; display: flex; margin: 10px 10px">
+        <div class="container-all-news" style="">
+            <h1 style="font-size: 32px; color: #22356d; text-align: center;
+                color: #140d55;
+                letter-spacing: 2px;
+                cursor: pointer;
+                font-weight: 400;" class="all_news_header">Новини</h1>
+            <div id="news_list" style="; display: flex; margin: 10px 10px">
                 {% for new in news %}
-                    <article id="n{{ forloop.counter }}" class="news_article" style="text-overflow: ellipsis;min-width: 80%; margin: 0 auto; margin-bottom: 10px; max-width: 80%; max-height: 300px; ">
+                    <article id="n{{ forloop.counter }}" class="news_article_all" style="border-bottom: 2px solid rgba(0,0,0,0.14);min-width: 100%; margin: 0 auto; margin-bottom: 10px; max-width: 100%; max-height: 200px; ">
 
-                        <div class = "news_info_all" style="margin: 10px 10px;">
-                            <header style="margin-top: 5px;">
+                        <div class = "news_info_all" style="margin: 10px 10px; ">
+                            <div class = "all_news_header_post" style="margin-top: 5px;">
                                 <time class="news_time">
-                                    <a id="h1" class="card_link">{{ new.date_posted }}</a>
+                                    <a id="" class="card_link">{{ new.date_posted }}</a>  <small> {{ new.author }}</small>
                                 </time>
-                                <h2 style="margin-bottom: 0.5em">
+                                <h2 style="margin-bottom: 0.5em; font-size: 16px">
                                     <a id="h1" class="card_link"  href="{% url 'post-detail' new.id %}">{{ new.post_head }}</a>
                                 </h2>
-                            </header>
-                            <img class = "news_image_all" style = "max-width: 100%;margin-right: 10px;border: 1px solid #22356d;
-  margin-bottom: 10px; height: auto; margin-left: auto; margin-right: 10px; display: block;" src="{{ new.image.url }}" align='left'>
+                            </div>
 
+
+                            <div class = "all_news_post_detail" style="display: flex;flex-direction: row">
+                                <div class="immmm">
+                                <img class = "news_image_all" style = "float: left;
+                                vertical-align: top; max-width: 100%;margin-right: 10px;border: 1px solid #22356d; max-width: 150px;
+                                margin-bottom: 10px; height: auto; margin-left: auto; margin-right: 10px; display: block;" src="{{ new.image.url }}" align='left'>
+                                    </div>
+                                <div class="textpostallnews">
                                 {{ new.post_text }}
-                                    <br>
-                            <small> {{ new.author }}</small>
-                     </div>
+                                    </div>
+                            </div>
+                            <br>
+                        </div>
+
                     </article>
                 {% endfor %}
             </div>
