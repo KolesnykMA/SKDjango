@@ -10,12 +10,12 @@
 
     <section class="all_news">
         <div class="container-all-news">
-            <h1 class="news_header">Новини</h1>
+            <h1 style="font-size: 32px; color: #22356d; text-align: center;" class="news_header">Новини</h1>
             <div id="news_list">
                 {% for new in news %}
                     <article id="n{{ forloop.counter }}" class="news_article">
 
-                        <div class = "news_info_all" style="margin-bottom: 10px">
+                        <div class = "news_info_all" style="margin: 10px 10px;">
                             <header style="margin-top: 5px;">
                                 <time class="news_time">
                                     <a id="h1" class="card_link">{{ new.date_posted }}</a>
