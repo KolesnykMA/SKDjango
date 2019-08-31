@@ -12,6 +12,9 @@ urlpatterns = [
     path('', views.home, name='index'),
     path('all_news/', views.all_news, name='all-news'),
     path('faq_info/', views.faq_info, name='faq-info'),
+    path('organizations/', views.orgs, name='orgs'),
+    path('documents/', views.docs, name='docs'),
+    path('success/', views.successView, name='success'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

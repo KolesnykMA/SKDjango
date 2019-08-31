@@ -1,10 +1,11 @@
 .ContactUS{
-    font-family: $base-font;
+    /*font-family: $base-font;*/
 }
 
 
 .container--form{
-    background-image: url("https://i.ibb.co/M2YS8b7/Fotoram3.jpg");
+
+    background: url('/static/skSite/img/background.jpeg');
     display:flex;
     flex-direction: column;
     justify-content: space-around;
@@ -33,7 +34,7 @@
 .title{
     margin-top:20px;
     margin-bottom:25px;
-    font-family: $headline-font;
+    /*font-family: $headline-font;*/
     font-weight: 700;
     @include font-size(32);
     height: 1px;
@@ -46,9 +47,9 @@
 .contactInfo{
     display: flex;
     flex-direction: column;
-    @include medium {
-        text-align: center;
-    }
+    /*@include medium {*/
+    /*    text-align: center;*/
+    /*}*/
 
     margin-left: 20px;
     margin-right: 20px;
@@ -78,19 +79,19 @@
     margin-right: 20px;
 
     box-sizing: border-box;
-    @include extra {
-        width: 40%;
-     }
-    @include large {
-        width: 40%;
-    }
-    @include medium {
-        width: 40%;
-    }
+    /*@include extra {*/
+    /*    width: 40%;*/
+    /* }*/
+    /*@include large {*/
+    /*    width: 40%;*/
+    /*}*/
+    /*@include medium {*/
+    /*    width: 40%;*/
+    /*}*/
 
-    @include small {
-        width: 100%;
-    }
+    /*@include small {*/
+    /*    width: 100%;*/
+    /*}*/
 
 }
 
@@ -118,7 +119,7 @@
 .infoFooter{
    margin-top:4px;
    font-size: 14px;
-   color: #140d55;
+   color: white;
 }
 
 

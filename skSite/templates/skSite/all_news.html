@@ -15,29 +15,27 @@
                 {% for new in news %}
                     <article id="n{{ forloop.counter }}" class="news_article">
 
-                        <img class = "news_image" src="{{ new.image.url }}">
-
-                        <div class="news_info">
-                            <header>
+                        <div class = "news_info_all" style="margin-bottom: 10px">
+                            <header style="margin-top: 5px;">
                                 <time class="news_time">
-                                    <a id="h1" class="card_link"  href="{% url 'post-detail' new.id %}">{{ new.post_head }}</a>
+                                    <a id="h1" class="card_link">{{ new.date_posted }}</a>
                                 </time>
                                 <h2 style="margin-bottom: 0.5em">
-                                    <a class="news_title" href="">
-                                        {{ new.post_head }}
-                                    </a>
+                                    <a id="h1" class="card_link"  href="{% url 'post-detail' new.id %}">{{ new.post_head }}</a>
                                 </h2>
                             </header>
-                            <p class="post_details">
+                            <img class = "news_image_all" style = "max-width: 100%;margin-right: 10px;
+  margin-bottom: 10px; max-width: 130px; height: auto; margin-left: auto; margin-right: 10px; display: block;" src="{{ new.image.url }}" align='left'>
+
                                 {{ new.post_text }}
-                            </p>
+                                    <br>
                             <small> {{ new.author }}</small>
-                        </div>
+                     </div>
                     </article>
                 {% endfor %}
             </div>
 
-            <button type="button" id="load_more_button-all-news">Показати ще</button>
+            <!--<button type="button" id="load_more_button-all-news">Показати ще</button>-->
 
         </div>
 

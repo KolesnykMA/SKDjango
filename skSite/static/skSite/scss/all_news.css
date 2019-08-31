@@ -1,8 +1,13 @@
+#news_list{
+  display: flex;
+  flex-direction: column;
+}
 .news_article {
-  position: relative;
   overflow: hidden;
   transition: 0.4s background-color;
   padding: 15px;
+  max-height: 257px;
+  display: block;
 }
 
 .news_article-all-news:before {
@@ -41,15 +46,17 @@
 
 }
 
-.news_image {
+.news_image_all {
   /*background-image: url("https://via.placeholder.com/130x160");*/
   background-size: cover;
   background-position: center;
-  max-width: 160px;
+  max-width: 130px;
   height: auto;
   display: block;
-  margin-right: 60px;
+  margin-right: 10px;
+  margin-bottom: 10px;
   float: left;
+  overflow: hidden;
 }
 
 .news_info {

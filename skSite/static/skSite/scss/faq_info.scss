@@ -1,26 +1,25 @@
-html {
-  scroll-behavior: smooth;
-}
-
-
 .infoFaqBody{
+    scroll-behavior: smooth;
   display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .navbr-faq-info{
+
   text-align: center;
   margin: 0 auto;
-  margin-left: 15px;
-  margin-right: 15px;
+  margin-left: 25px;
+  margin-right: 25px;
   text-align: center;
 
 
 }
 
 .page-faq-info{
-  font-family: $base-font;
-  margin-left: 25px;
-  margin-right: 25px;
+
+  /*font-family: $base-font;*/
+
 }
 
 
@@ -61,13 +60,13 @@ html {
   margin-top: 20px;
   margin-bottom: 10px;
   text-align: center;
-  font-family: $headline-font;
+  /*font-family: $headline-font;*/
 }
 
 code {
   font-size: 14px;
   overflow: hidden;
-  font-family: $base-font;
+  /*font-family: $base-font;*/
   background-color: #ccc;
   padding: 15px;
   display: block;
