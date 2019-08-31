@@ -3,25 +3,31 @@
 {% block title %}
     solo New {{ object.id }}
 {% endblock %}
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-{% block content %}
-    <section class="post_detail_section">
-        <div class = "solo_news_post" style=" text-overflow: ellipsis; margin: 25px 25px;">
 
-            <img src = "{{ object.image.url }}" style = "max-width: 100%; max-height: 100%;  float: left; vertical-align: top; margin: 7px 7px 7px 7px;">
-                <h1 style = "margin-top: 50px; margin-right: 25px; font-size: 32px;color: #22356d;">{{ object.post_head }}</h1>
+{% block content %}
+
+        <div class = "solo_news_post_{{ object.id }}" style="margin: 15px;display: block; justify-content: center">
+
+
+
+            <br>
+
+            <h1 style="color: #22356d;font-size: 16px; padding: 5px 5px">
+                <img src = "{{ object.image.url }}" style="float: left; margin: 15px; border: 1px solid #22356d">
                 <br>
-                <p style="padding-left: 5px; margin-right: 10px">Автор: {{ object.author }}. Дата: {{ object.date_posted }}</p>
-                <br>
-                <p  style="padding-left: 15px; margin-right: 10px">{{ object.post_text }}</p>
+                {{ object.post_head }}
+            </h1>
+
+
+            <p style="padding: 10px 10px">Автор: {{ object.author }}. Дата: {{ object.date_posted }}</p>
+
+            <p style="padding: 10px 10px">{{ object.post_text }}</p>
 
         </div>
-    </section>
+
 {% endblock content %}
 
 {% block script %}
-    <script src="{% static 'skSite/js/all_news.js' %}"></script>
+    <script src="{% static 'skSite/js/index.js' %}"></script>
     <script src = "https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
 {% endblock %}

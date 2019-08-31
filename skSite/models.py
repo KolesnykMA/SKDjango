@@ -18,3 +18,6 @@ class Document(models.Model):
     doc_name = models.CharField(max_length=100)
     doc_description = models.CharField(max_length=200)
     file = models.FileField(upload_to='documents_pdfs')
+
+class Slider(models.Model):
+    file = models.FileField(upload_to='slider_img')
