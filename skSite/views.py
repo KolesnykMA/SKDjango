@@ -12,7 +12,7 @@ send_mail(
     fail_silently=False,
 )
 
-from .models import Post, Document
+from .models import Post, Document, Slider
 
 from django.views.generic import (
     ListView,
@@ -25,10 +25,17 @@ from django.views.generic import (
 
 def home(request):
     news = Post.objects.all()
+    slides = Slider.objects.all()
+
     if len(news) > 0:
         news = Post.objects.all().order_by('-id')[:3]
     else:
         news = {}
+
+    if len(slides) > 0:
+        slides = Slider.objects.all().order_by('-id')
+    else:
+        slides= {}
 
     if request.method == "POST":
         name = request.POST['name']
@@ -37,7 +44,7 @@ def home(request):
         message = settings.EMAIL_HOST_USER
         send_mail(name, message, from_email, ['maxymura@gmail.com'], fail_silently=False)
 
-    return render(request, 'skSite/index.html', {'news': news, })
+    return render(request, 'skSite/index.html', {'news': news, 'slides': slides, })
 
 
 class PostDetailView(DetailView):

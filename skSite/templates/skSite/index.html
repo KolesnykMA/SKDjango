@@ -8,7 +8,6 @@
 {% block content %}
     <link rel="stylesheet" type="text/css" href="{% static 'skSite/scss/news_index.scss' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'skSite/scss/contactForm.css' %}">
-    {% include 'skSite/slider.html' %}
 
     <section class="news">
         <div class="container">
@@ -137,13 +136,12 @@
         </div>
     </section>
 
-
-  
 {% endblock %}
 
 {% block script %}
-    <script src="{% static 'skSite/js/index.js' %}"></script>
+     <script src="{% static 'skSite/js/index.js' %}"></script>
     <script src="{% static 'skSite/js/news_index.js' %}"></script>
     <script src="{% static 'skSite/js/contactForm.js' %}"></script>
     <script src = "https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+
 {% endblock %}

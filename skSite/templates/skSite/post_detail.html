@@ -3,17 +3,18 @@
 {% block title %}
     solo New {{ object.id }}
 {% endblock %}
-
 {% block content %}
 
-        <div class = "solo_news_post_{{ object.id }}" style="margin: 15px;display: block; justify-content: center">
-
-
-
+    <section class="post_solo_main" style=";">
+        <div class = "container-solo-news" style="">
             <br>
+            <div class="iimmmaasdasd" style="margin: 0 auto; ">
+                <img src = "{{ object.image.url }}" style="margin-left: auto;
+                  margin-right: auto;
+                  display: block; border: 1px solid #22356d; ">
+            </div>
+            <h1 style="color: #22356d;font-size: 16px; padding: 5px 5px; text-align: center">
 
-            <h1 style="color: #22356d;font-size: 16px; padding: 5px 5px">
-                <img src = "{{ object.image.url }}" style="float: left; margin: 15px; border: 1px solid #22356d">
                 <br>
                 {{ object.post_head }}
             </h1>
@@ -24,10 +25,11 @@
             <p style="padding: 10px 10px">{{ object.post_text }}</p>
 
         </div>
+    </section>
 
 {% endblock content %}
 
 {% block script %}
-    <script src="{% static 'skSite/js/index.js' %}"></script>
+      <script src="{% static 'skSite/js/index.js' %}"></script>
     <script src = "https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
 {% endblock %}
