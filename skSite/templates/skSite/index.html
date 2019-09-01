@@ -8,6 +8,19 @@
 {% block content %}
     <link rel="stylesheet" type="text/css" href="{% static 'skSite/scss/news_index.scss' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'skSite/scss/contactForm.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'skSite/scss/slider.css' %}">
+
+    <div class="slider" style="">
+        <div class="slider__wrapper">
+            {%  for slide in slides %}
+            <div class="slider__item">
+                <div style="height: 350px;"><img src = "{{ slide.file.url }}"></div>
+             </div>
+            {%  endfor %}
+        </div>
+        <a class="slider__control slider__control_left" href="#" role="button"></a>
+        <a class="slider__control slider__control_right slider__control_show" href="#" role="button"></a>
+    </div>
 
     <section class="news">
         <div class="container">
@@ -16,8 +29,7 @@
                 {% for new in  news %}
                     <div class="card_container" style=" max-width: 270px; max-height: 350px; margin-bottom: 10px;">
                         <div class="card"  style=" max-width: 100%;">
-
-                                <img  style = "max-width: 100%;height: auto; margin-left: auto; margin-right: auto; display: block;"src="{{ new.image.url }}">
+                            <img  style = "max-width: 100%;height: auto; margin-left: auto; margin-right: auto; display: block;"src="{{ new.image.url }}">
                             <div class="card_title" style="text-overflow: ellipsis;word-wrap: break-word;white-space: nowrap; font-size: 16px; margin: 2px">
                                   <p class="title_details" style="color: black;
                                       width: 100%;
@@ -139,52 +151,42 @@
 {% endblock %}
 
 {% block script %}
+    <script src="{% static 'skSite/js/slider.js' %}"></script>
      <script src="{% static 'skSite/js/index.js' %}"></script>
     <script src="{% static 'skSite/js/news_index.js' %}"></script>
     <script src = "https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
+
     <script>
     console.log('Примати без фільтра');
-
-    $(document).ready(function() {
+$(document).ready(function() {
         $('.button_form_contact').click(function (event){
-
             var name = $('.name').val();
             var email = $('.email').val();
             var tg = $('.tg').val();
             var message = $('.message').val();
-
             var statusElm = $('.status');
-            statusElm.empty();;
-
+            statusElm.empty();
             var correct = true;
 
             if(email.length < 5 || !email.includes('@') || !email.includes('.')){
                 event.preventDefault();
                 statusElm.append('<div>Недійсна пошта</div>');
                 correct = false;
-            }
-
-            if(name.length < 6){
+            }if(name.length < 6){
                 event.preventDefault();
                 statusElm.append("<div>Ім'я має містити мінімум 6 символів</div>");
                 correct = false;
-            }
-
-
-            if(message.length < 20){
+            }if(message.length < 20) {
                 event.preventDefault();
                 statusElm.append('<div>Повідомлення має містити мінімум 20 символів</div>');
                 correct = false;
-            }
-            console.log(correct)
-            if (correct){
-
+            }if (correct){
                 window.alert("Повідомлення булл надіслано")
             }
-
             })
         })
     </script>
+
 
 {% endblock %}
