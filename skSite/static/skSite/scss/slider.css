@@ -67,3 +67,12 @@
       font-size: 100px;
       text-align: center;
     }
+
+    .slider__title {
+        color: white;
+        top: 1%;
+        left: 3%;
+        @include font-size(32);
+
+        position: absolute;
+    }

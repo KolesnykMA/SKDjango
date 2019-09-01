@@ -4,7 +4,6 @@
 
 
 .container--form{
-
     background: url('/static/skSite/img/background.jpeg');
     display:flex;
     flex-direction: column;
@@ -114,12 +113,22 @@
 
 .infoHeader{
     color: white;
+       text-shadow:
+        0.07em 0 black,
+        0 0.07em black,
+        -0.07em 0 black,
+        0 -0.07em black;
 }
 
 .infoFooter{
    margin-top:4px;
    font-size: 14px;
    color: white;
+       text-shadow:
+        0.07em 0 black,
+        0 0.07em black,
+        -0.07em 0 black,
+        0 -0.07em black;
 }
 
 

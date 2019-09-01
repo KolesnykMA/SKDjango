@@ -6,21 +6,22 @@
 {% block content %}
 
     <section class="post_solo_main" style=";">
-        <div class = "container-solo-news" style="">
+        <div class = "container-solo-news" style="width: 100%;">
             <br>
-            <div class="iimmmaasdasd" style="margin: 0 auto; ">
-                <img src = "{{ object.image.url }}" style="margin-left: auto;
+            <div class="iimmmaasdasd" style="margin: 0 auto; width: 100%;">
+                <img src = "{{ object.image.url }}" style="margin-left: auto; max-height: 400px; max-width: 650px;
                   margin-right: auto;
-                  display: block; border: 1px solid #22356d; ">
+                  display: block; border: 1px solid #22356d; width: 100%; height: auto">
             </div>
+            <div class = "solo_post_content_details" style="margin: 0 auto;">
             <h1 style="color: #22356d;font-size: 16px; padding: 5px 5px; text-align: center">
 
                 <br>
                 {{ object.post_head }}
             </h1>
+            </div>
 
-
-            <p style="padding: 10px 10px">Автор: {{ object.author }}. Дата: {{ object.date_posted }}</p>
+            <p style="padding: 10px 10px; text-align: center">Автор: {{ object.author }}. <br> Дата: {{ object.date_posted }}</p>
 
             <p style="padding: 10px 10px">{{ object.post_text }}</p>
 
