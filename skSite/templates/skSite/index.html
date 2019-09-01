@@ -120,12 +120,12 @@
                                 <br>
                                 <span class = "header_message">Повідомлення </span>
                             <br>
-                            <textarea name="your-message"  class="message" cols = "50" rows = "10" class = "textarea" aria-invalid="false"  placeholder="Було б дуже круто зробити..."></textarea>
+                            <textarea name="message"  class="message" cols = "50" rows = "10" class = "textarea" aria-invalid="false"  placeholder="Було б дуже круто зробити..."></textarea>
                             <br>
 
                         </label>
 
-                        <div class = "status"></div>
+                        <div class = "status" style="margin-left: 10px; margin-right: 10px; max-width: 300px;"></div>
 
                         <div class= "buttonClass-contact">
                             <button type = "submit" class = "button_form_contact">Надіслати</button>
@@ -141,7 +141,50 @@
 {% block script %}
      <script src="{% static 'skSite/js/index.js' %}"></script>
     <script src="{% static 'skSite/js/news_index.js' %}"></script>
-    <script src="{% static 'skSite/js/contactForm.js' %}"></script>
     <script src = "https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script>
+    console.log('Примати без фільтра');
+
+    $(document).ready(function() {
+        $('.button_form_contact').click(function (event){
+
+            var name = $('.name').val();
+            var email = $('.email').val();
+            var tg = $('.tg').val();
+            var message = $('.message').val();
+
+            var statusElm = $('.status');
+            statusElm.empty();;
+
+            var correct = true;
+
+            if(email.length < 5 || !email.includes('@') || !email.includes('.')){
+                event.preventDefault();
+                statusElm.append('<div>Недійсна пошта</div>');
+                correct = false;
+            }
+
+            if(name.length < 6){
+                event.preventDefault();
+                statusElm.append("<div>Ім'я має містити мінімум 6 символів</div>");
+                correct = false;
+            }
+
+
+            if(message.length < 20){
+                event.preventDefault();
+                statusElm.append('<div>Повідомлення має містити мінімум 20 символів</div>');
+                correct = false;
+            }
+            console.log(correct)
+            if (correct){
+
+                window.alert("Повідомлення булл надіслано")
+            }
+
+            })
+        })
+    </script>
 
 {% endblock %}

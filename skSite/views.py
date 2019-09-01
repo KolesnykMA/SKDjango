@@ -4,14 +4,6 @@ from django.core.mail import send_mail, BadHeaderError
 
 from django.shortcuts import render, redirect
 
-send_mail(
-    'Subject here',
-    'Here is the message.',
-    settings.EMAIL_HOST_USER,
-    ['maxymura@example.com'],
-    fail_silently=False,
-)
-
 from .models import Post, Document, Slider
 
 from django.views.generic import (
@@ -38,11 +30,13 @@ def home(request):
         slides= {}
 
     if request.method == "POST":
-        name = request.POST['name']
-        from_email = request.POST['email']
-        telegram = request.POST['tg']
-        message = settings.EMAIL_HOST_USER
-        send_mail(name, message, from_email, ['maxymura@gmail.com'], fail_silently=False)
+        send_mail(
+            request.POST['name'],
+            'Sent from ' + request.POST['email'] + " Telegram " + request.POST['tg'] + request.POST['message'],
+            settings.EMAIL_HOST_USER,
+            ['sknaukma@ukma.edu.ua'],
+            fail_silently=False,
+        )
 
     return render(request, 'skSite/index.html', {'news': news, 'slides': slides, })
 
