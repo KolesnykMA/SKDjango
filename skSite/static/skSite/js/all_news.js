@@ -1,4 +1,4 @@
-const button = document.getElementById("load_more_button-all-news");
+/*const button = document.getElementById("load_more_button-all-news");
         const news_list = document.getElementById("news_list");
         let article;
         let num = 3;
@@ -9,4 +9,4 @@ const button = document.getElementById("load_more_button-all-news");
             article.setAttribute("id",+(++num));
             news_list.appendChild(article);
         }
-        });
+        });*/

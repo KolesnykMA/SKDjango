@@ -3,11 +3,7 @@
   display: flex;
     flex-direction: column;
     width: 100%;
-       text-shadow:
-        0.07em 0 black,
-        0 0.07em black,
-        -0.07em 0 black,
-        0 -0.07em black;
+
 }
 
 .navbr-faq-info{

@@ -7,7 +7,7 @@ from django.db import models
 
 class Post(models.Model):
     post_head = models.CharField(max_length=100)
-    post_text = models.TextField(max_length=1000)
+    post_text = models.TextField(max_length=3000)
     author = models.CharField(max_length=100)
     image = models.ImageField(default='default.jpg', upload_to='news_images')
     date_posted = models.DateTimeField(default=timezone.now)

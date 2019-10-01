@@ -18,7 +18,6 @@ from django.views.generic import (
 def home(request):
     news = Post.objects.all()
     slides = Slider.objects.all()
-
     if len(news) > 0:
         news = Post.objects.all().order_by('-id')[:3]
     else:
@@ -52,15 +51,7 @@ class PostListView(ListView):
     template_name = 'skSite/all_news.html'
     context_object_name = 'posts'
     ordering = ['-date_posted']
-
-
-def all_news(request):
-    news = Post.objects.all()
-    if len(news) > 0:
-        news = Post.objects.all().order_by('-id')[:3]
-    else:
-        news = {}
-    return render(request, 'skSite/all_news.html', {'news': news, })
+    paginate_by = 3
 
 
 def faq_info(request):

@@ -17,41 +17,48 @@
                 cursor: pointer;
                 font-weight: 400;" class="all_news_header">Новини</h1>
             <div id="news_list" style="; display: flex; margin: 10px 10px">
-                {% for new in news %}
+                {% for new in posts %}
                     <article id="n{{ forloop.counter }}" class="news_article_all" style="border-bottom: 2px solid rgba(0,0,0,0.14);min-width: 100%; margin: 0 auto; margin-bottom: 10px; max-width: 100%; max-height: 200px; ">
 
-                        <div class = "news_info_all" style="margin: 10px 10px; ">
+                        <div class = "news_info_all" style="margin: 10px 10px; display: flex; flex-direction: column;">
                             <div class = "all_news_header_post" style="margin-top: 5px;">
                                 <time class="news_time">
                                     <a id="" class="card_link">{{ new.date_posted }}</a>  <small> {{ new.author }}</small>
                                 </time>
+                            </div>
+
+                            <div class = "all_news_post_detail" style="display: flex;flex-direction: column">
                                 <h2 style="margin-bottom: 0.5em; font-size: 16px">
                                     <a id="h1" class="card_link"  href="{% url 'post-detail' new.id %}">{{ new.post_head }}</a>
                                 </h2>
-                            </div>
-
-
-                            <div class = "all_news_post_detail" style="display: flex;flex-direction: row">
-                                <div class="immmm">
-                                <img class = "news_image_all" style = "float: left;
-                                vertical-align: top; max-width: 100%;margin-right: 10px;border: 1px solid #22356d; max-width: 150px;
-                                margin-bottom: 10px; height: auto; margin-left: auto; margin-right: 10px; display: block;" src="{{ new.image.url }}" align='left'>
-                                    </div>
                                 <div class="textpostallnews">
-                                {{ new.post_text }}
-                                    </div>
+                                    {{ new.post_text | safe | linebreaksbr }}
+                                </div>
+                                <!--<div class="immmm">
+                                    <img class = "news_image_all" style = "float: left;
+                                    vertical-align: top; max-width: 100%;margin-right: 10px;border: 1px solid #22356d; max-width: 150px;
+                                    margin-bottom: 10px; height: auto; margin-left: auto; margin-right: 10px; display: block;" src="{{ new.image.url }}" align='left'>
+                                </div>-->
                             </div>
                             <br>
                         </div>
-
                     </article>
                 {% endfor %}
+                {% if is_paginated %}
+                    <div aria-label="Page navigation conatiner" style="float: right;">
+                        <ul class="pagination">
+                            {% if page_obj.has_previous %}
+                                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link" style="float: right;"><p style = "size: 16px;">&laquo; НАЗАД </p></a></li>
+                            {% endif %}
+                            {% if page_obj.has_next %}
+                                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link" style="float: right; size: 16px;"> <p style = "size: 32px;">ДАЛІ &raquo;</p></a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+                {% endif %}
             </div>
-
-            <!--<button type="button" id="load_more_button-all-news">Показати ще</button>-->
-
         </div>
-
     </section>
 {% endblock content %}
 
