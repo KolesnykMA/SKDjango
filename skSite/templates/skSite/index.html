@@ -1,5 +1,6 @@
 {% extends 'skSite/base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block title %}
   Main page
@@ -109,34 +110,36 @@
                     <form class="contactUs__form" action="" method="POST">
                         {% csrf_token %}
                         <label>
-                                <span class = "header_name_thurname">Ім'я та прізвище<font color="red"></font></span>
-                            <br>
-                            <input type="name" name = "name" class = "name" value size="38" aria-required="true" aria-invalid="false" placeholder = "Григорій Сковорода">
+{#                                <span class = "header_name_thurname">Ім'я та прізвище<font color="red"></font></span>#}
 
+{#                            <input type="name" name = "name" class = "name" value size="38" aria-required="true" aria-invalid="false" placeholder = "Григорій Сковорода">#}
+                                {{ form.name|as_crispy_field }}
                             <br>
                         </label>
                         <label>
-                            <br>
-                            <span class = "header_mail">Електронна пошта<font color="red"></font></span>
-                            <br>
-                            <input type = "mail" name = "email" class = "email" value size="38" aria-required="true" aria-invalid="false" placeholder="name.lastname@ukma.edu.ua">
+
+{#                            <span class = "header_mail">Електронна пошта<font color="red"></font></span>#}
+
+{#                            <input type = "mail" name = "email" class = "email" value size="38" aria-required="true" aria-invalid="false" placeholder="name.lastname@ukma.edu.ua">#}
+                            {{ form.email|as_crispy_field }}
                             <br>
 
                         </label>
 
                         <label>
-                                <br>
-                                <span class = "header_telegram">Телеграм</span>
-                                <br>
-                                <input type = "telegram" name = "tg" class = "tg" value size="38" aria-required="true" aria-invalid="false" placeholder="@KMA1615">
-                                <br>
+{#                                <span class = "header_telegram">Телеграм</span>#}
+
+{#                                <input type = "telegram" name = "tg" class = "tg" value size="38" aria-required="true" aria-invalid="false" placeholder="@KMA1615">#}
+                                {{ form.telegram|as_crispy_field }}
+                            <br>
                             </label>
                         <label>
-                                <br>
-                                <span class = "header_message">Повідомлення </span>
-                            <br>
-                            <textarea name="message"  class="message" cols = "50" rows = "10" class = "textarea" aria-invalid="false"  placeholder="Було б дуже круто зробити..."></textarea>
-                            <br>
+
+{#                                <span class = "header_message">Повідомлення </span>#}
+
+{#                            <textarea name="message"  class="message" cols = "50" rows = "10" class = "textarea" aria-invalid="false"  placeholder="Було б дуже круто зробити..."></textarea>#}
+                            {{ form.text|as_crispy_field }}
+
 
                         </label>
 

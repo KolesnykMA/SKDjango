@@ -1,6 +1,9 @@
 from django.conf import settings
 from django.http import HttpResponse
 from django.core.mail import send_mail, BadHeaderError
+from django.utils import timezone
+
+from .form import ContactForm
 
 from django.shortcuts import render, redirect
 
@@ -18,6 +21,7 @@ from django.views.generic import (
 def home(request):
     news = Post.objects.all()
     slides = Slider.objects.all()
+    form = ContactForm()
     if len(news) > 0:
         news = Post.objects.all().order_by('-id')[:3]
     else:
@@ -29,15 +33,16 @@ def home(request):
         slides= {}
 
     if request.method == "POST":
-        send_mail(
-            request.POST['name'],
-            'Sent from ' + request.POST['email'] + " Telegram " + request.POST['tg'] + request.POST['message'],
-            settings.EMAIL_HOST_USER,
-            ['sknaukma@ukma.edu.ua'],
-            fail_silently=False,
-        )
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = request.user
+            post.timestamp = timezone.now()
+            post.save()
+            form = ContactForm()
+            return render(request, 'skSite/index.html', {'news': news, 'slides': slides, 'form': form})
 
-    return render(request, 'skSite/index.html', {'news': news, 'slides': slides, })
+    return render(request, 'skSite/index.html', {'news': news, 'slides': slides, 'form': form})
 
 
 class PostDetailView(DetailView):

@@ -24,3 +24,10 @@ class Document(models.Model):
 class Slider(models.Model):
     slider_text = models.CharField(max_length=100)
     file = models.ImageField(default='default.jpg', upload_to='slider_img')
+
+
+class Mail(models.Model):
+    name = models.CharField(max_length=30)
+    email = models.CharField(max_length=30)
+    telegram = models.CharField(max_length=20)
+    text = models.TextField(max_length=2000)

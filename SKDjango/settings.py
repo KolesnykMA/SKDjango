@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'skSite',
     'tinymce',
+    'crispy_forms',
 
 ]
 
