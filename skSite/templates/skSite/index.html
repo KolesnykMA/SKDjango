@@ -41,13 +41,12 @@
                                       overflow: hidden;font-weight: 700;
                                         color: #22356d;">
                                       <a href = "{% url 'post-detail' new.id %}">{{ new.post_head }}</a></p>
-
                             </div>
-
                             <div class="card_content" style = "text-overflow: ellipsis; width: 100%; margin: 5px; min-width: 295px;">
                                 <p id="t1" class="post_details">
                                     <small>{{ new.date_posted }}</small>
-                                    {{ new.post_text }}
+                                    <br>
+                                    {{ new.post_short_body }}
                                     <br>
                                     <small>{{ new.author }}</small>
                                 </p>

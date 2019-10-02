@@ -6,7 +6,8 @@ from django.db import models
 
 
 class Post(models.Model):
-    post_head = models.CharField(max_length=100)
+    post_head = models.CharField(max_length=128)
+    post_short_body = models.CharField(max_length=256)
     post_text = models.TextField(max_length=3000)
     author = models.CharField(max_length=100)
     image = models.ImageField(default='default.jpg', upload_to='news_images')

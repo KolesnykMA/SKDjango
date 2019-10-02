@@ -22,7 +22,7 @@
             </div>
 
             <p style="padding: 10px 10px; text-align: center">Автор: {{ object.author }}. <br> Дата: {{ object.date_posted }}</p>
-
+            <p style="padding: 20px 20px; overflow: hidden;">{{ object.post_short_body }}</p>
             <p style="padding: 20px 20px; overflow: hidden;">{{ object.post_text | safe | linebreaksbr }}</p>
 
         </div>

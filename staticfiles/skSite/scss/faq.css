@@ -1,0 +1,63 @@
+.FaqMain {
+    background-color: #009BB5;
+    /*background-image: url("https://ukranews.com/upload/news/2017/10/13/1359e0c4091181e-59e0c3fe643f3-0001-b025155a-59e0b16e-5ec7-c9c01f66_crop_1200.jpg");*/
+    background-image: url("/static/skSite/img/skovoroda_faq.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 300px ;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color:white;
+    background-attachment: fixed;
+
+}
+
+.rowFaq{
+    padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.textFaq{
+    min-height: 1px;
+    letter-spacing: 1px;
+    padding-top: 1em;
+}
+.faqMain h1{
+    font-size: 40px ;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.faqMain p{
+    font-size: 27px ;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.buttonFaq{
+    min-height: 1px;
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
+
+.textButton{
+    background-color:#140d55;
+    color:white;
+    font-size: 15px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    touch-action: manipulation;
+    font-weight: 400;
+    padding: 12px 16px;
+    text-transform: uppercase;
+    border-radius: 6px;
+}
+
+.textButton:hover{
+    background-color: rgb(247, 242, 232);
+    color:black;
+}

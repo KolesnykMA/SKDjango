@@ -32,7 +32,7 @@
                                     <a id="h1" class="card_link"  href="{% url 'post-detail' new.id %}">{{ new.post_head }}</a>
                                 </h2>
                                 <div class="textpostallnews">
-                                    {{ new.post_text | safe | linebreaksbr }}
+                                    {{ new.post_short_body | safe | linebreaksbr }}
                                 </div>
                                 <!--<div class="immmm">
                                     <img class = "news_image_all" style = "float: left;
