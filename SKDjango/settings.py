@@ -22,7 +22,7 @@ SECRET_KEY = 'xl1m3)1rl0ss3f*xf1xqyvzq9hza91am+0i+r%nc4ohk3d2%g5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['sknaukma.herokuapp.com', '127.0.0.1']
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
@@ -148,6 +148,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
     os.path.join(BASE_DIR, 'skSite/static'),
+    os.path.join(BASE_DIR, 'media'),
 )
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
