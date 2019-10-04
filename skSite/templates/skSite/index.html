@@ -9,17 +9,16 @@
 {% block content %}
     <link rel="stylesheet" type="text/css" href="{% static 'skSite/scss/news_index.scss' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'skSite/scss/contactForm.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'skSite/scss/slider.css' %}">
 
-    <div class="slider" style="width: 100%;">
+    <div class="slider" style="">
         <div class="slider__wrapper">
             {%  for slide in slides %}
-            <div class="slider__item" style="width: 100%; max-height: 300px;">
-                <div style="max-height: 300px;">
-                    <img src = "{{ slide.file.url }}" style="width: 100%">
-                    <span class="slider__title">{{ slide.slider_text }}</span>
-                </div>
-             </div>
+                <div class="slider__item" style="width: 100%; height: auto; max-height: 550px; min-height: 250px;">
+
+                        <img src = "{{ slide.file.url }}" style="width: 100%;">
+                        <span class="slider__title">{{ slide.slider_text }}</span>
+
+                 </div>
             {%  endfor %}
         </div>
         <a class="slider__control slider__control_left" href="#" role="button"></a>
